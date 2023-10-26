@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+
+    <script src="socket.io/socket.io.js"></script>
+    <script>  var socket=io();
+        var messages = document.getElementById('messages');
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(input.value){
+                socket.emit('message', input.value);
+            }
+            input.value = '';            
+        });      
+    </script>
+
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>Section principale</h2>    
+            <div id="chat">
+            <div id="messages">         
+            </div>
+                <ul id="messages"></ul>
+                <form id="form" action="">
+                    <input id="input" autocomplete="off" />
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+
