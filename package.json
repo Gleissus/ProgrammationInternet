@@ -1,0 +1,15 @@
+{
+  "name": "projecttrello",
+  "version": "1.0.0",
+  "description": "Creer une page Web avece un module de chat live",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GleissonPigari",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}

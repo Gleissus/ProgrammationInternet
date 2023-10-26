@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ma Page Web Élégante</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <script src="../JS/script.js"></script>   
+
+    <script src="socket.io/socket.io.js"></script>
+    <script>  var socket=io();
+        var messages = document.getElementById('messages');
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(input.value){
+                socket.emit('message', input.value);
+            }
+            input.value = '';            
+        });      
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1>Gleisson Pigari</h1>
+        <nav>
+            <a href="#" onclick="loadPage('home.html', this)">Home</a>
+            <a href="#" onclick="loadPage('curriculum.html', this)">Curriculum</a>
+            <a href="#" onclick="loadPage('projects.html', this)">Personal Projects</a>
+            <a href="#" onclick="loadPage('contact.html', this)">Contact</a>
+        </nav>
+    </header>
+ 
+    <main id="main-content">
+        <section>
+            <h2>Section principale</h2>    
+            <div id="chat">
+            <div id="messages">         
+            </div>
+                <ul id="messages"></ul>
+                <form id="form" action="">
+                    <input id="input" autocomplete="off" />
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </section>        
+    </main>
+
+    <footer>
+        © 2023 Gleisson Fernando Ferler Pigari
+    </footer>
+
+    <script src="../JS/scriptPages.js"></script>    
+
+</body>
+</html>
+
