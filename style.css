@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -11,17 +10,16 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #333;
+    background-color: #141414;
     color: #fff;
     text-align: center;
     padding: 20px;
     z-index: 1;
 }
 
-
-h1 {
-    font-size: 36px;
-    text-align: center;
+h1, h2, h3 {
+    padding: 0 0 5px 0;
+    margin: 0;
 }
 
 nav {
@@ -39,27 +37,102 @@ nav a {
     display: inline-block;
 }
 
-nav a.menu-button.active {
-    background-color: #ff6600; /* Cor de fundo diferente para o botão ativo */
-    color: #fff; /* Cor do texto no botão ativo */
-}
-
 
 section {
-    margin: 20px;
-    padding: 20px;
+    margin: 100px 50px; 
+    padding: 50px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-nav a:hover {
-    background-color: #555; 
+#me .me {
+    border-bottom: 4px solid #ac2727;
+    padding: 20px 0;
+    margin: 5px 0 15px 0;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
+#me .me img {
+    width: 40px;
+    border-radius: 50%;
+    float: left;
+    padding-right: 10px;
+}
+
+.user-list {
+    width: 145px;
+    border-right: 0px solid #8a7e7e;
+    float: left;
+}
+
+.user-list ul {
+    padding: 0;
+    margin: 0;
+}
+
+.user-list ul li {
+    padding: 5px 0;
+    cursor: pointer;
+    color: blue;
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.chat-window {
+    width: 230px;
+    height: 330px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+}
+
+.chat-window .head {
+    height: 20px;
+    padding: 5px;
+    background: #1f1e1e;
+    margin-bottom: 10px;
+}
+
+.chat-window .body {
+    height: calc(100% - 20px);
+}
+
+.chat-window .body .chat-text {
+    margin-bottom: 10px;
+}
+
+.chat-window .body .chat-text.me {
+    text-align: right;
+}
+
+.chat-window .body .chat-text.me .userPhoto {
+    float: right;
+}
+
+.chat-window .body .chat-text .userPhoto {
+    width: 30px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.chat-window .body .chat-text .userPhoto img {
+    max-width: 100%;
+}
+
+.chat-window .footer {
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 10px);
+}
+
+.chat-window .footer button {
+    width: 60px;
+    height: 25px;
+}
+
+.chat-window .footer input {
+    width: calc(100% - 70px);
+    height: 20px;
 }

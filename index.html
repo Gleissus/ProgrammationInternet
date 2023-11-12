@@ -1,59 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Ma Page Web Élégante</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-    <script src="../JS/script.js"></script>   
+    <head>
+        <title>Chat test</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
 
-    <script src="socket.io/socket.io.js"></script>
-    <script>  var socket=io();
-        var messages = document.getElementById('messages');
-        var form = document.getElementById('form');
-        var input = document.getElementById('input');
+        <header>
+            <h1>Gleisson Pigari</h1>
+            <nav>
+                <a href="#" onclick="loadPage('home.html', this)">Home</a>
+                <a href="#" onclick="loadPage('curriculum.html', this)">Curriculum</a>
+                <a href="#" onclick="loadPage('projects.html', this)">Personal Projects</a>
+                <a href="#" onclick="loadPage('contact.html', this)">Contact</a>
+            </nav>
+        </header>
 
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            if(input.value){
-                socket.emit('message', input.value);
-            }
-            input.value = '';            
-        });      
-    </script>
+        <div class="login" id="login">
+            <input id="login_name" placeholder="Username">
+            <input type="password" id="login_pass" placeholder="Password" value="admin">
+            <button onClick="login()">Login</button>
+        </div>
+        
+        <div id="after-login" style="display:none">
+            <h1 id="me"></h1>
+            <div id="user-list" class="user-list"></div>
+        </div>
+    
 
-</head>
-<body>
-    <header>
-        <h1>Gleisson Pigari</h1>
-        <nav>
-            <a href="#" onclick="loadPage('home.html', this)">Home</a>
-            <a href="#" onclick="loadPage('curriculum.html', this)">Curriculum</a>
-            <a href="#" onclick="loadPage('projects.html', this)">Personal Projects</a>
-            <a href="#" onclick="loadPage('contact.html', this)">Contact</a>
-        </nav>
-    </header>
- 
-    <main id="main-content">
-        <section>
-            <h2>Section principale</h2>    
-            <div id="chat">
-            <div id="messages">         
-            </div>
-                <ul id="messages"></ul>
-                <form id="form" action="">
-                    <input id="input" autocomplete="off" />
-                    <button>Send Message</button>
-                </form>
-            </div>
-        </section>        
-    </main>
-
-    <footer>
-        © 2023 Gleisson Fernando Ferler Pigari
-    </footer>
-
-    <script src="../JS/scriptPages.js"></script>    
-
-</body>
-</html>
-
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="/node_modules/socket.io/client-dist/socket.io.min.js"></script>
+        <script>
+            const socket = io({transports: ['websocket']}); 
+        </script>
+        <script src="js/chat.js"></script>
+    </body>
